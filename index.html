@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>こんにちは</title>
+    <style>
+      :root {
+        --bg1: #f7f1ff;
+        --bg2: #e6f7ff;
+        --text: #2e2e2e;
+        --accent: #8a63d2;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        font-family: "Segoe UI", "Hiragino Sans", "Yu Gothic", sans-serif;
+        background: linear-gradient(135deg, var(--bg1), var(--bg2));
+        color: var(--text);
+      }
+
+      .card {
+        background: rgba(255, 255, 255, 0.7);
+        border: 1px solid rgba(138, 99, 210, 0.2);
+        border-radius: 22px;
+        box-shadow: 0 18px 45px rgba(89, 64, 132, 0.12);
+        padding: 48px 72px;
+        text-align: center;
+        backdrop-filter: blur(6px);
+      }
+
+      h1 {
+        margin: 0;
+        font-size: clamp(2.5rem, 6vw, 5rem);
+        letter-spacing: 0.08em;
+        color: var(--accent);
+        font-weight: 700;
+      }
+
+      p {
+        margin-top: 18px;
+        font-size: 1rem;
+        letter-spacing: 0.12em;
+        color: rgba(46, 46, 46, 0.8);
+      }
+    </style>
+  </head>
+  <body>
+    <main class="card">
+      <h1>こんにちは</h1>
+      <p>Hello</p>
+    </main>
+  </body>
+</html>
