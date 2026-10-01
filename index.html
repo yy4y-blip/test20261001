@@ -3,13 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>こんにちは</title>
+    <title>こんばんは</title>
     <style>
       :root {
-        --bg1: #f7f1ff;
-        --bg2: #e6f7ff;
-        --text: #2e2e2e;
-        --accent: #8a63d2;
+        --night-1: #07111d;
+        --night-2: #101c31;
+        --night-3: #1d2d4a;
+        --text: #eaf4ff;
+        --soft: #c7d9f7;
+        --glow: #9ec5ff;
       }
 
       * {
@@ -21,41 +23,60 @@
         min-height: 100vh;
         display: grid;
         place-items: center;
+        overflow: hidden;
         font-family: "Segoe UI", "Hiragino Sans", "Yu Gothic", sans-serif;
-        background: linear-gradient(135deg, var(--bg1), var(--bg2));
+        background:
+          radial-gradient(circle at 50% 20%, rgba(142, 172, 255, 0.18), transparent 22%),
+          linear-gradient(180deg, var(--night-1) 0%, var(--night-2) 45%, var(--night-3) 100%);
         color: var(--text);
       }
 
+      body::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        background-image:
+          radial-gradient(2px 2px at 10% 20%, rgba(255,255,255,0.9) 0, transparent 100%),
+          radial-gradient(1.5px 1.5px at 25% 30%, rgba(255,255,255,0.8) 0, transparent 100%),
+          radial-gradient(2px 2px at 42% 18%, rgba(255,255,255,0.8) 0, transparent 100%),
+          radial-gradient(1.5px 1.5px at 60% 34%, rgba(255,255,255,0.7) 0, transparent 100%),
+          radial-gradient(2px 2px at 78% 22%, rgba(255,255,255,0.9) 0, transparent 100%),
+          radial-gradient(1.5px 1.5px at 88% 32%, rgba(255,255,255,0.7) 0, transparent 100%);
+        opacity: 0.9;
+      }
+
       .card {
-        background: rgba(255, 255, 255, 0.7);
-        border: 1px solid rgba(138, 99, 210, 0.2);
-        border-radius: 22px;
-        box-shadow: 0 18px 45px rgba(89, 64, 132, 0.12);
-        padding: 48px 72px;
+        position: relative;
+        z-index: 1;
+        padding: 60px 80px;
         text-align: center;
-        backdrop-filter: blur(6px);
+        background: rgba(14, 22, 38, 0.45);
+        border: 1px solid rgba(158, 197, 255, 0.25);
+        border-radius: 26px;
+        box-shadow: 0 0 30px rgba(110, 144, 220, 0.15), 0 25px 60px rgba(0, 0, 0, 0.3);
+        backdrop-filter: blur(8px);
       }
 
       h1 {
         margin: 0;
-        font-size: clamp(2.5rem, 6vw, 5rem);
-        letter-spacing: 0.08em;
-        color: var(--accent);
-        font-weight: 700;
+        font-size: clamp(2.8rem, 6vw, 5.5rem);
+        letter-spacing: 0.09em;
+        color: var(--text);
+        text-shadow: 0 0 12px rgba(158, 197, 255, 0.8), 0 0 24px rgba(158, 197, 255, 0.45);
       }
 
       p {
-        margin-top: 18px;
+        margin: 18px 0 0;
         font-size: 1rem;
-        letter-spacing: 0.12em;
-        color: rgba(46, 46, 46, 0.8);
+        letter-spacing: 0.14em;
+        color: var(--soft);
       }
     </style>
   </head>
   <body>
     <main class="card">
-      <h1>こんにちは</h1>
-      <p>Hello</p>
+      <h1>こんばんは</h1>
+      <p>Good evening</p>
     </main>
   </body>
 </html>
